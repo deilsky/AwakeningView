@@ -10,7 +10,8 @@
                  .build()
                  .target(findViewById(R.id.tv_main1),findViewById(R.id.tv_main2),...)// 目标控件
                  .dashGap(0).dashWidth(0) //虚线宽度与间距，不需要可以不设置
-                 .build();//设置完成
+                 .alpha(255) //透明度 默认255 不透明
+                 .build();//设置完成
 
 # Prerequisites
 
@@ -21,11 +22,11 @@
             ...
             jcenter()
         }
-    }
+    }
 # Dependency
 ## Add this to your module's build.gradle file (make sure the version matches the jcenter badge above):
 ### 
     dependencies {
         ...
-        compile 'com.deilsky:awakeningView:1.0.7'
+        compile 'com.deilsky:awakeningView:1.1.2'
     }
