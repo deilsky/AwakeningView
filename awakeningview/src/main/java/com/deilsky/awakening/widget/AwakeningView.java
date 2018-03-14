@@ -1,6 +1,10 @@
 package com.deilsky.awakening.widget;
 
 import android.graphics.drawable.GradientDrawable;
+import android.support.annotation.ColorRes;
+import android.support.annotation.IdRes;
+import android.support.v4.content.ContextCompat;
+import android.util.TypedValue;
 import android.view.View;
 
 /**
@@ -31,7 +35,9 @@ public class AwakeningView {
 
     private int mAlpha = 255;
 
-
+    /**
+     * @param circleBuilder 构造圆形View
+     */
     private AwakeningView(CircleBuilder circleBuilder) {
         this.mBorderType = BorderType.CIRCLE;
         this.mFillColor = circleBuilder.mFillColor;
@@ -39,6 +45,9 @@ public class AwakeningView {
         this.mStrokeSize = circleBuilder.mStrokeSize;
     }
 
+    /**
+     * @param rectangleBuilder 构造圆角矩形View
+     */
     private AwakeningView(RectangleBuilder rectangleBuilder) {
         this.mBorderType = BorderType.RECTANGLE;
         this.mFillColor = rectangleBuilder.mFillColor;
@@ -66,15 +75,29 @@ public class AwakeningView {
         private CircleBuilder() {
         }
 
-        public CircleBuilder fillColor(int fillColor) {
+        /**
+         * @param fillColor 填充颜色
+         * @return CirCleBuilder
+         */
+        public CircleBuilder fillColor(@IdRes int fillColor) {
             this.mFillColor = fillColor;
             return this;
         }
 
-        public CircleBuilder strokeColor(int strokeColor) {
+        /**
+         * @param strokeColor 边框颜色
+         * @return CirCleBuilder
+         */
+
+        public CircleBuilder strokeColor(@IdRes int strokeColor) {
             this.mStrokeColor = strokeColor;
             return this;
         }
+
+        /**
+         * @param strokeSize 边框宽度
+         * @return CirCleBuilder
+         */
 
         public CircleBuilder strokeSize(int strokeSize) {
             this.mStrokeSize = strokeSize;
@@ -92,10 +115,10 @@ public class AwakeningView {
         private int mStrokeSize = 1;
         private int mStrokeColor = 0;
         private int mRadiusAll = 0;
-        private float mRadiusLeftTop = 0;
-        private float mRadiusLeftBottom = 0;
-        private float mRadiusRightTop = 0;
-        private float mRadiusRightBottom = 0;
+        private int mRadiusLeftTop = 0;
+        private int mRadiusLeftBottom = 0;
+        private int mRadiusRightTop = 0;
+        private int mRadiusRightBottom = 0;
 
         public static RectangleBuilder create() {
             builder = new RectangleBuilder();
@@ -105,42 +128,76 @@ public class AwakeningView {
         private RectangleBuilder() {
         }
 
-        public RectangleBuilder fillColor(int fillColor) {
+        /**
+         * @param fillColor 填充颜色
+         * @return RectangleBuilder
+         */
+        public RectangleBuilder fillColor(@ColorRes int fillColor) {
+
             this.mFillColor = fillColor;
             return this;
         }
 
-        public RectangleBuilder strokeColor(int strokeColor) {
+        /**
+         * @param strokeColor 边框颜色
+         * @return RectangleBuilder
+         */
+
+        public RectangleBuilder strokeColor(@ColorRes int strokeColor) {
             this.mStrokeColor = strokeColor;
             return this;
         }
 
+        /**
+         * @param strokeSize 边框宽度
+         * @return RectangleBuilder
+         */
         public RectangleBuilder strokeSize(int strokeSize) {
             this.mStrokeSize = strokeSize;
             return this;
         }
 
+        /**
+         * @param radius 统一设置圆角半径
+         * @return RectangleBuilder
+         */
         public RectangleBuilder connerAll(int radius) {
             this.mRadiusAll = radius;
             return this;
         }
 
-        public RectangleBuilder connerLeftTop(float radius) {
+        /**
+         * @param radius 单独设置左上圆角半径
+         * @return RectangleBuilder
+         */
+        public RectangleBuilder connerLeftTop(int radius) {
             this.mRadiusLeftTop = radius;
             return this;
         }
 
-        public RectangleBuilder connerLeftBottom(float radius) {
+        /**
+         * @param radius 单独设置左下圆角半径
+         * @return RectangleBuilder
+         */
+        public RectangleBuilder connerLeftBottom(int radius) {
             this.mRadiusLeftBottom = radius;
             return this;
         }
 
-        public RectangleBuilder connerRightTop(float radius) {
+        /**
+         * @param radius  单独设置右上圆角半径
+         * @return RectangleBuilder
+         */
+        public RectangleBuilder connerRightTop(int radius) {
             this.mRadiusRightTop = radius;
             return this;
         }
 
-        public RectangleBuilder connerRightBottom(float radius) {
+        /**
+         * @param radius 单独设置右下圆角半径
+         * @return RectangleBuilder
+         */
+        public RectangleBuilder connerRightBottom(int radius) {
             this.mRadiusRightBottom = radius;
             return this;
         }
@@ -155,21 +212,37 @@ public class AwakeningView {
 
     }
 
+    /**
+     * @param view 圆角View 目标
+     * @return AwakeningView
+     */
     public AwakeningView target(View... view) {
         this.mView = view;
         return this;
     }
 
+    /**
+     * @param dashGap 虚线间隔
+     * @return AwakeningView
+     */
     public AwakeningView dashGap(int dashGap) {
         this.mDashGap = dashGap;
         return this;
     }
 
+    /**
+     * @param dashWidth 虚线宽度
+     * @return AwakeningView
+     */
     public AwakeningView dashWidth(int dashWidth) {
         this.mDashWidth = dashWidth;
         return this;
     }
 
+    /**
+     * @param alpha 透明度
+     * @return AwakeningView
+     */
     public AwakeningView alpha(int alpha) {
         this.mAlpha = alpha;
         return this;
@@ -199,12 +272,12 @@ public class AwakeningView {
             }
             gradientDrawable.setShape(GradientDrawable.OVAL);
             if (mFillColor != 0) {
-                gradientDrawable.setColor(mFillColor);
+                gradientDrawable.setColor(color(mFillColor));
             }
             if (mDashGap > 0 && mDashWidth > 0) {
-                gradientDrawable.setStroke(mStrokeSize, mStrokeColor, mDashWidth, mDashGap);
+                gradientDrawable.setStroke(measureInt(mStrokeSize), color(mStrokeColor), measureInt(mDashWidth), measureInt(mDashGap));
             } else {
-                gradientDrawable.setStroke(mStrokeSize, mStrokeColor);
+                gradientDrawable.setStroke(measureInt(mStrokeSize), color(mStrokeColor));
             }
             gradientDrawable.setAlpha(mAlpha);
 
@@ -223,27 +296,37 @@ public class AwakeningView {
             }
             gradientDrawable.setShape(GradientDrawable.RECTANGLE);
             if (mFillColor != 0) {
-                gradientDrawable.setColor(mFillColor);
+                gradientDrawable.setColor(color(mFillColor));
             }
             if (mDashGap > 0 && mDashWidth > 0) {
-                gradientDrawable.setStroke(mStrokeSize, mStrokeColor, mDashWidth, mDashGap);
+                gradientDrawable.setStroke(measureInt(mStrokeSize), color(mStrokeColor), measureInt(mDashWidth), measureInt(mDashGap));
             } else {
-                gradientDrawable.setStroke(mStrokeSize, mStrokeColor);
+                gradientDrawable.setStroke(measureInt(mStrokeSize), color(mStrokeColor));
             }
-            if (mRadiusAll > 0) {
-                gradientDrawable.setCornerRadius(mRadiusAll);
+            if (mRadiusAll != 0) {
+                gradientDrawable.setCornerRadius(measureInt(mRadiusAll));
             } else {
                 gradientDrawable.setCornerRadii(
                         new float[]{
-                                mRadiusLeftTop, mRadiusLeftTop,
-                                mRadiusRightTop, mRadiusRightTop,
-                                mRadiusRightBottom, mRadiusRightBottom,
-                                mRadiusLeftBottom, mRadiusLeftBottom,
+                                measureFloat(mRadiusLeftTop), measureFloat(mRadiusLeftTop),
+                                measureFloat(mRadiusRightTop), measureFloat(mRadiusRightTop),
+                                measureFloat(mRadiusRightBottom), measureFloat(mRadiusRightBottom),
+                                measureFloat(mRadiusLeftBottom), measureFloat(mRadiusLeftBottom)
                         }
                 );
             }
             gradientDrawable.setAlpha(mAlpha);
             view.setBackground(gradientDrawable);
         }
+    }
+
+    private int measureInt(int value) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, mView[0].getResources().getDisplayMetrics());
+    }
+    private float measureFloat(float value) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, mView[0].getResources().getDisplayMetrics());
+    }
+    private int color(int resId){
+        return ContextCompat.getColor(mView[0].getContext(),resId);
     }
 }

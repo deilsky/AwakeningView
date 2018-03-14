@@ -24,4 +24,13 @@
         android:gravity="center_vertical"
         android:text="Hello World!" />
 
+    <TextView
+        android:id="@+id/tv_main3"
+        android:background="@drawable/corner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:text="Hello World!" />
+
 </LinearLayout>
