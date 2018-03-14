@@ -45,7 +45,7 @@ android {
         userOrg = 'deilsky'      //bintray注册的用户名
         groupId = 'com.deilsky'         //compile引用时的第1部分groupId
         artifactId = 'awakeningView'     //compile引用时的第2部分项目名
-        publishVersion = '1.1.2'    //compile引用时的第3部分版本号
+        publishVersion = '1.1.3'    //compile引用时的第3部分版本号
         desc = ''//项目描述
         repoName = 'noInvasion' //你的仓库名称，没有填写默认仓库是maven//这也是很多人上传仓库不对名问题最多情况，
         website = 'https://github.com/deilsky/AwakeningView' //github 托管地址

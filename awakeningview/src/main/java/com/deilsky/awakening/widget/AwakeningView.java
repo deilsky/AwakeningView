@@ -2,7 +2,6 @@ package com.deilsky.awakening.widget;
 
 import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.ColorRes;
-import android.support.annotation.IdRes;
 import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.View;
@@ -79,7 +78,7 @@ public class AwakeningView {
          * @param fillColor 填充颜色
          * @return CirCleBuilder
          */
-        public CircleBuilder fillColor(@IdRes int fillColor) {
+        public CircleBuilder fillColor(@ColorRes int fillColor) {
             this.mFillColor = fillColor;
             return this;
         }
@@ -89,7 +88,7 @@ public class AwakeningView {
          * @return CirCleBuilder
          */
 
-        public CircleBuilder strokeColor(@IdRes int strokeColor) {
+        public CircleBuilder strokeColor(@ColorRes int strokeColor) {
             this.mStrokeColor = strokeColor;
             return this;
         }
