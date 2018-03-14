@@ -22,7 +22,7 @@
             ...
             jcenter()
         }
-    }
+    }
 # Dependency
 ## Add this to your module's build.gradle file (make sure the version matches the jcenter badge above):
 ### 
