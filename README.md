@@ -5,12 +5,13 @@
     AwakeningView.RectangleBuilder.create() //RectangleBuilder 对应圆角距形,CircleBuilder 对应圆形
                  .connerAll(5) //设置所有圆角角度，调用此方法后，如果继续调用connerXX方法，那么connerXX方法将不会生效
                  .strokeSize(2)//设置边框大小
-                 .strokeColor(ContextCompat.getColor(this,R.color.colorAccent)) //设置边框颜色
-                 .fillColor(ContextCompat.getColor(this,R.color.colorPrimary)) //设置填充颜色
+                 .strokeColor(R.color.colorAccent) //设置边框颜色
+                 .fillColor(R.color.colorPrimary) //设置填充颜色
                  .build()
                  .target(findViewById(R.id.tv_main1),findViewById(R.id.tv_main2),...)// 目标控件
                  .dashGap(0).dashWidth(0) //虚线宽度与间距，不需要可以不设置
-                 .build();//设置完成
+                 .alpha(255) //透明度 默认255 不透明
+                 .build();//设置完成
 
 # Prerequisites
 
@@ -27,5 +28,5 @@
 ### 
     dependencies {
         ...
-        compile 'com.deilsky:awakeningView:1.0.7'
+        compile 'com.deilsky:awakeningView:1.1.2'
     }
