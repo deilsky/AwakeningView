@@ -9,9 +9,9 @@
                  .fillColor(R.color.colorPrimary) //设置填充颜色
                  .build()
                  .target(findViewById(R.id.tv_main1),findViewById(R.id.tv_main2),...)// 目标控件
-                 .dashGap(0).dashWidth(0) //虚线宽度与间距，不需要可以不设置
-                 .alpha(255) //透明度 默认255 不透明
-                 .build();//设置完成
+                 .dashGap(0).dashWidth(0) //虚线宽度与间距 不需要可以不设置
+                 .alpha(255) //透明度 默认255 不透明
+                 .build();//设置完成
 
 # Prerequisites
 
