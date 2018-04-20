@@ -17,7 +17,7 @@ allprojects {
 ### Step 2. Add the dependency
 ```
 dependencies {
-  compile 'com.github.deilsky:ConciseLayout:v1.0'
+  compile 'com.github.deilsky:AwakeningView:v1.1'
 }
 ```
 ### Step3.Used
