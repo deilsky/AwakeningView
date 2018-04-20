@@ -26,5 +26,9 @@ public class MainActivity extends AppCompatActivity {
                 .strokeSize(1)
                 .connerAll(5)
                 .build().target(findViewById(R.id.tv_main2)).alpha(255).build();
+        AwakeningView.CircleBuilder.create()
+                .fillColor(R.color.colorAccent)
+                .strokeColor(R.color.colorPrimary)
+                .strokeSize(1).build().target(findViewById(R.id.tv_main3)).build();
     }
 }

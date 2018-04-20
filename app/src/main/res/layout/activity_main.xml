@@ -8,29 +8,37 @@
     tools:context="com.deilsky.awakeningviewsimple.MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/corner"
+        android:gravity="center"
+        android:text="xml形式圆角" />
+
+    <TextView
         android:id="@+id/tv_main1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="5dp"
-        android:background="@color/colorPrimaryDark"
         android:gravity="center"
-        android:text="Hello World!" />
+        android:text="圆角虚线" />
 
     <TextView
         android:id="@+id/tv_main2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="5dp"
-        android:gravity="center_vertical"
-        android:text="Hello World!" />
+        android:gravity="center"
+        android:text="圆角矩形" />
 
     <TextView
         android:id="@+id/tv_main3"
-        android:background="@drawable/corner"
-        android:layout_width="match_parent"
+        android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
         android:layout_margin="5dp"
-        android:gravity="center_vertical"
-        android:text="Hello World!" />
+        android:gravity="center"
+        android:text="圆形" />
+
 
 </LinearLayout>
