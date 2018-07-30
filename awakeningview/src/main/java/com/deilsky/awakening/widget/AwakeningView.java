@@ -1,6 +1,7 @@
 package com.deilsky.awakening.widget;
 
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.support.annotation.ColorRes;
 import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
